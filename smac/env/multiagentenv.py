@@ -65,3 +65,11 @@ class MultiAgentEnv(object):
                     "n_agents": self.n_agents,
                     "episode_limit": self.episode_limit}
         return env_info
+
+    @property
+    def obs_size(self):
+        return [self.get_obs_size()]*self.n_agents
+
+    @property
+    def n_action(self):
+        return [self.get_total_actions()]*self.n_agents
